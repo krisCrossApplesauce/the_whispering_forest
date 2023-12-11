@@ -40,9 +40,18 @@
 <!--  Tree Slider  -->
 			<div class="d-flex justify-content-center">
 
+<!--  Whisper Input  -->
+				<div class="d-flex z-4">
+					<div>you must give the forest a secret</div>
+					<input type="text" id="whisper_input">
+					<button onclick="addWhisper()">Submit</button>
+				</div>
+<!--  End of Whisper Input  -->
+
 				<div class="tree z--1 m-auto">
 					<div class="back_ground"></div>
 					<div class="ground"></div>
+					<div class="center whisper px-3 py-2" id="whisper">_</div>
 				</div>
 
 				<div class="tree z-3 m-auto" id="tree-3">
@@ -76,6 +85,7 @@
 						<div class="leaves d"></div>
 					</div>
 				</div>
+
 			</div>
 <!--  End of Tree Slider  -->
 
