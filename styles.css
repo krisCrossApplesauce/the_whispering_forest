@@ -1,0 +1,161 @@
+
+html, body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.tree {
+	position: absolute;
+	background-color: rgba(49, 65, 138, 0.25);
+	color: black;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.z--1 { z-index: -1; };
+.z-0 { z-index: 0; }
+.z-1 { z-index: 1; }
+.z-2 { z-index: 2; }
+.z-3 { z-index: 3; }
+
+.size-1 {
+	top: 27%;
+	width: 55%;
+	height: 55%;
+}
+.size-2 {
+	top: 15%;
+	width: 75%;
+	height: 75%;
+}
+
+.hide { opacity: 0; }
+
+
+.back_ground {
+	position: absolute;
+	bottom: 11%;
+	height: 13%;
+	width: 100%;
+	border-bottom: 13.2vh solid #7ba428;
+	border-left: 22.5vw solid transparent;
+	border-right: 22.5vw solid transparent;
+}
+
+.ground {
+	position: absolute;
+	bottom: 0;
+	background-color: #7ba428;
+	height: 11%;
+	width: 100%;
+}
+.wood {
+	position: absolute;
+	bottom: 5%;
+	background-color: #432109;
+	width: 8%;
+	height: 70%;
+}
+.leaves {
+	position: absolute;
+	top: 0;
+	background-color: #196719;
+	width: 34%;
+	height: 30%;
+	border-radius: 30px;
+}
+
+.wood.a { left: 10%; }
+.wood.b { left: 85%; }
+.wood.c { left: 35%; }
+.wood.d { left: 65%; }
+
+.leaves.a { left: -3%; }
+.leaves.b { left: 72%;}
+.leaves.c { left: 22%; }
+.leaves.d { left: 52%; }
+
+
+@keyframes moveTo1 {
+	from {
+		top: 68%;
+		opacity: 0;
+		width: 10%;
+		height: 10%;
+	}
+	to {
+		top: 27%;
+		opacity: 1;
+		width: 55%;
+		height: 55%;
+	}
+}
+.moveTo1 {
+	animation-name: moveTo1;
+	animation-duration: 4s;
+	animation-play-state: running;
+}
+
+@keyframes moveTo2 {
+	from {
+		top: 27%;
+		width: 55%;
+		height: 55%;
+	}
+	to {
+		top: 15%;
+		width: 75%;
+		height: 75%;
+	}
+}
+.moveTo2 {
+	animation-name: moveTo2;
+	animation-duration: 4s;
+	animation-play-state: running;
+}
+
+@keyframes moveTo3 {
+	from {
+		top: 15%;
+		width: 75%;
+		height: 75%;
+	}
+	to {
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.moveTo3 {
+	animation-name: moveTo3;
+	animation-duration: 4s;
+	animation-play-state: running;
+}
+
+@keyframes moveTo0 {
+	from {
+		top: 0;
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+	}
+	to {
+		top: -150%;
+		opacity: 0;
+		width: 300%;
+		height: 300%;
+	}
+}
+.moveTo0 {
+	animation-name: moveTo0;
+	animation-duration: 4s;
+	animation-play-state: running;
+}
