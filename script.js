@@ -18,12 +18,12 @@ function addWhisper() {
 function animateThroughTrees(event) {
 	if (event.deltaY > 0 && timer === null) {
 
-		$("#tree-0").attr("id", "1");
-		$("#tree-1").attr("id", "2");
-		$("#tree-2").attr("id", "3");
-		$("#tree-3").attr("id", "4");
-		$("#tree-4").attr("id", "5");
-		$("#tree-5").attr("id", "0");
+		$("#scene-0").attr("id", "1");
+		$("#scene-1").attr("id", "2");
+		$("#scene-2").attr("id", "3");
+		$("#scene-3").attr("id", "4");
+		$("#scene-4").attr("id", "5");
+		$("#scene-5").attr("id", "0");
 
 		$("#1").addClass("moveTo1");
 		$("#2").addClass("moveTo2");
@@ -33,7 +33,7 @@ function animateThroughTrees(event) {
 		$("#0").addClass("moveTo0");
 		$("#whisper").attr("class", "center whisper z-6 px-3 py-2 fadeOutWhisper");
 
-		timer = setTimeout(scrollThroughTrees, 3000);
+		timer = setTimeout(whisperTrees, 2000);
 	}
 	else if (event.deltaY <= 0) {
 		console.log("scrolled down");
@@ -43,23 +43,7 @@ function animateThroughTrees(event) {
 	}
 }
 
-function scrollThroughTrees() {
-	$("#whisper").addClass("hide");
-
-	$("#0").attr("class", "tree z-0 m-auto hide");
-	$("#1").attr("class", "tree z-1 size-1 m-auto");
-	$("#2").attr("class", "tree z-2 size-2 m-auto");
-	$("#3").attr("class", "tree z-3 size-3 m-auto");
-	$("#4").attr("class", "tree z-4 size-4 m-auto");
-	$("#5").attr("class", "tree z-5 m-auto");
-
-	$("#0").attr("id", "tree-0");
-	$("#1").attr("id", "tree-1");
-	$("#2").attr("id", "tree-2");
-	$("#3").attr("id", "tree-3");
-	$("#4").attr("id", "tree-4");
-	$("#5").attr("id", "tree-5");
-
+function whisperTrees() {
 	if (i >= whispers.length) {
 		i = 0;
 	}
@@ -67,14 +51,30 @@ function scrollThroughTrees() {
 	i++;
 	$("#whisper").attr("class", "center whisper z-6 px-3 py-2 fadeInWhisper");
 
-	boing.play();
-	timer = setTimeout(clearTimer, 1000);
-	console.log("scroll function has been called");
+	timer = setTimeout(scrollThroughTrees, 1000);
 }
 
-function clearTimer() {
+function scrollThroughTrees() {
+	$("#whisper").addClass("hide");
+
+	$("#0").attr("class", "scene z-0 m-auto hide");
+	$("#1").attr("class", "scene z-1 size-1 m-auto");
+	$("#2").attr("class", "scene z-2 size-2 m-auto");
+	$("#3").attr("class", "scene z-3 size-3 m-auto");
+	$("#4").attr("class", "scene z-4 size-4 m-auto");
+	$("#5").attr("class", "scene z-5 m-auto");
+
+	$("#0").attr("id", "scene-0");
+	$("#1").attr("id", "scene-1");
+	$("#2").attr("id", "scene-2");
+	$("#3").attr("id", "scene-3");
+	$("#4").attr("id", "scene-4");
+	$("#5").attr("id", "scene-5");
+
+	boing.play();
 	clearTimeout(timer);
 	timer = null;
+	console.log("scroll function has been called");
 }
 
 $(document).ready(function() {
