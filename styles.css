@@ -17,7 +17,6 @@ html, body {
 .center {
 	position: absolute;
 	top: 50%;
-	left: 50%;
 }
 
 .z--1 { z-index: -1; };
@@ -26,13 +25,25 @@ html, body {
 .z-2 { z-index: 2; }
 .z-3 { z-index: 3; }
 .z-4 { z-index: 4; }
+.z-5 { z-index: 5; }
+.z-6 { z-index: 6; }
 
 .size-1 {
+	top: 45%;
+	width: 30%;
+	height: 30%;
+}
+.size-2 {
+	top: 38%;
+	width: 40%;
+	height: 40%;
+}
+.size-3 {
 	top: 27%;
 	width: 55%;
 	height: 55%;
 }
-.size-2 {
+.size-4 {
 	top: 15%;
 	width: 75%;
 	height: 75%;
@@ -85,6 +96,8 @@ html, body {
 .leaves.d { left: 52%; }
 
 
+
+
 @keyframes moveTo1 {
 	from {
 		top: 68%;
@@ -93,19 +106,58 @@ html, body {
 		height: 10%;
 	}
 	to {
-		top: 27%;
+		top: 45%;
 		opacity: 1;
-		width: 55%;
-		height: 55%;
+		width: 30%;
+		height: 30%;
 	}
 }
 .moveTo1 {
 	animation-name: moveTo1;
 	animation-duration: 3s;
 	animation-play-state: running;
+	animation-fill-mode: both;
 }
 
 @keyframes moveTo2 {
+	from {
+		top: 45%;
+		width: 30%;
+		height: 30%;
+	}
+	to {
+		top: 38%;
+		width: 40%;
+		height: 40%;
+	}
+}
+.moveTo2 {
+	animation-name: moveTo2;
+	animation-duration: 3s;
+	animation-play-state: running;
+	animation-fill-mode: both;
+}
+
+@keyframes moveTo3 {
+	from {
+		top: 38%;
+		width: 40%;
+		height: 40%;
+	}
+	to {
+		top: 27%;
+		width: 55%;
+		height: 55%;
+	}
+}
+.moveTo3 {
+	animation-name: moveTo3;
+	animation-duration: 3s;
+	animation-play-state: running;
+	animation-fill-mode: both;
+}
+
+@keyframes moveTo4 {
 	from {
 		top: 27%;
 		width: 55%;
@@ -117,13 +169,14 @@ html, body {
 		height: 75%;
 	}
 }
-.moveTo2 {
-	animation-name: moveTo2;
+.moveTo4 {
+	animation-name: moveTo4;
 	animation-duration: 3s;
 	animation-play-state: running;
+	animation-fill-mode: both;
 }
 
-@keyframes moveTo3 {
+@keyframes moveTo5 {
 	from {
 		top: 15%;
 		width: 75%;
@@ -135,10 +188,11 @@ html, body {
 		height: 100%;
 	}
 }
-.moveTo3 {
-	animation-name: moveTo3;
+.moveTo5 {
+	animation-name: moveTo5;
 	animation-duration: 3s;
 	animation-play-state: running;
+	animation-fill-mode: both;
 }
 
 @keyframes moveTo0 {
@@ -159,6 +213,7 @@ html, body {
 	animation-name: moveTo0;
 	animation-duration: 3s;
 	animation-play-state: running;
+	animation-fill-mode: both;
 }
 
 
@@ -176,6 +231,7 @@ html, body {
 	animation-name: fadeOutWhisper;
 	animation-duration: 3s;
 	animation-play-state: running;
+	animation-fill-mode: both;
 }
 
 @keyframes fadeInWhisper {
@@ -187,4 +243,5 @@ html, body {
 	animation-duration: 1s;
 	animation-timing-function: ease-in;
 	animation-play-state: running;
+	animation-fill-mode: both;
 }
