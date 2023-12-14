@@ -86,11 +86,10 @@ function scrollThroughTrees() {
 /*  Random tree location funcs  */
 
 function getRandomFromRange(min, max) {
-	max++;
+	/* both min and max are included in the possible outcomes */
+	max += 1;
 	return Math.floor(Math.random * (max - min) + min);
 }
-
-/* gotta make the z-indexes between the scenes larger, like 20 or something, so can have depth between the objects on a single layer AND have the animated layers of an object over the object */
 
 /*  End of Random tree location funcs  */
 
