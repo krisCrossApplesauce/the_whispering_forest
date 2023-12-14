@@ -60,6 +60,38 @@ html, body {
 
 
 
+/*  Arch Scene Stuff  */
+
+.arch_scene {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 70%;
+}
+
+.podium {
+	background-color: grey;
+	width: 110px;
+	height: 150px;
+}
+
+.podium_input {
+	position: absolute;
+	top: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: grey;
+	border-radius: 20px;
+	width: 220px;
+	height: 300px;
+	text-align: center;
+}
+
+/*  End of Arch Scene Stuff  */
+
+
+
 /*  Tree Objects (semi-temporary)  */
 
 .back_ground {

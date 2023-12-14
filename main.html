@@ -40,14 +40,6 @@
 <!--  Forest Slider  -->
 			<div class="d-flex justify-content-center">
 
-<!--  Whisper Input  -->
-				<div class="d-flex z-6">
-					<div>you must give the forest a secret</div>
-					<input type="text" id="whisper_input">
-					<button onclick="addWhisper()">Submit</button>
-				</div>
-<!--  End of Whisper Input  -->
-
 				<div class="center whisper z-6 px-3 py-2" id="whisper">I am the forest of whispers</div>
 
 <!--
@@ -56,6 +48,20 @@
 					<div class="ground"></div>
 				</div>
 			-->
+
+<!--  Arch Input Scene  -->
+			<div class="arch_scene z-6 m-auto" id="arch-scene">
+				<div class="podium m-auto" onclick="lookAtPodium()"></div>
+			</div>
+
+			<div class="podium_input z-6 p-3 hide" id="podium_input">
+				<!--
+				<div>you must give the forest a secret</div>
+				<input type="text" id="whisper_input">
+				<button id="submit_whisper" onclick="addWhisper()">Submit</button>
+				-->
+			</div>
+<!--  End of Arch Input Scene  -->
 
 				<div class="scene z-5 size-5 m-auto" id="scene-5">
 					<div class="ground"></div>

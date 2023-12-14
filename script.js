@@ -2,6 +2,7 @@ const boing = new Audio('./assets/jump.mp3');
 boing.playbackRate = 1.7;
 boing.volume = 0.1;
 var timer = null;
+var secret_given = false;
 
 const whispers = [];
 var i = 0;
@@ -9,16 +10,27 @@ var i = 0;
 
 function addWhisper() {
 	var input = document.getElementById('whisper_input');
-	console.log(input.value);
-	whispers.push(input.value);
-	input.value = "";
+	var value = input.value;
+
+	if (input.value != "") {
+		whispers.push(input.value);
+		input.value = "";
+	}
+
+	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3 hide" id="podium_input"></div>`);
+
+	if (value != "") {
+		/* repairArch(); */
+		$("#arch-scene").remove();
+		secret_given = true;
+	}
 }
 
 
 /*  Scene Slide Funcs  */
 
 function animateThroughTrees(event) {
-	if (event.deltaY > 0 && timer === null) {
+	if (event.deltaY > 0 && timer === null && secret_given === true) {
 
 		$("#scene-0").attr("id", "1");
 		$("#scene-1").attr("id", "2");
@@ -40,8 +52,11 @@ function animateThroughTrees(event) {
 	else if (event.deltaY <= 0) {
 		console.log("scrolled down");
 	}
-	else {
+	else if (timer != null) {
 		console.log("waiting for timer before going again");
+	}
+	else {
+		console.log("no secrets, no forest");
 	}
 }
 
@@ -93,6 +108,26 @@ function getRandomFromRange(min, max) {
 
 /*  End of Random tree location funcs  */
 
+
+
+/*  Arch Scene  */
+
+function lookAtPodium() {
+	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3" id="podium_input">
+		<div>you must give the forest a secret</div>
+		<input type="text" id="whisper_input">
+		<button id="submit_whisper" onclick="addWhisper()">Submit</button>
+	</div>`);
+
+	document.getElementById("whisper_input").addEventListener("keypress", function(event){
+		if (event.key === "Enter") {
+			event.preventDefault();
+			addWhisper();
+		}
+	});
+}
+
+/*  End of Arch Scene  */
 
 
 $(document).ready(function() {
