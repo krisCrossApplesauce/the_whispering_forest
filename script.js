@@ -15,6 +15,8 @@ function addWhisper() {
 }
 
 
+/*  Scene Slide Funcs  */
+
 function animateThroughTrees(event) {
 	if (event.deltaY > 0 && timer === null) {
 
@@ -62,7 +64,7 @@ function scrollThroughTrees() {
 	$("#2").attr("class", "scene z-2 size-2 m-auto");
 	$("#3").attr("class", "scene z-3 size-3 m-auto");
 	$("#4").attr("class", "scene z-4 size-4 m-auto");
-	$("#5").attr("class", "scene z-5 m-auto");
+	$("#5").attr("class", "scene z-5 size-5 m-auto");
 
 	$("#0").attr("id", "scene-0");
 	$("#1").attr("id", "scene-1");
@@ -76,6 +78,23 @@ function scrollThroughTrees() {
 	timer = null;
 	console.log("scroll function has been called");
 }
+
+/*  End of Scene Slide Funcs  */
+
+
+
+/*  Random tree location funcs  */
+
+function getRandomFromRange(min, max) {
+	max++;
+	return Math.floor(Math.random * (max - min) + min);
+}
+
+/* gotta make the z-indexes between the scenes larger, like 20 or something, so can have depth between the objects on a single layer AND have the animated layers of an object over the object */
+
+/*  End of Random tree location funcs  */
+
+
 
 $(document).ready(function() {
 	whispers.push("whisper");
