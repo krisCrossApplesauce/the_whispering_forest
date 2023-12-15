@@ -20,9 +20,10 @@ function addWhisper() {
 	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3 hide" id="podium_input"></div>`);
 
 	if (value != "") {
-		/* repairArch(); */
+		/* repairArchAnimation(); */
 		$("#arch-scene").remove();
 		secret_given = true;
+		$("#whisper").text("take a scroll through the forest");
 	}
 }
 
@@ -74,6 +75,7 @@ function whisperTrees() {
 function scrollThroughTrees() {
 	$("#whisper").addClass("hide");
 
+	/* 0 will be replaceWith instead of attr() */
 	$("#0").attr("class", "scene z-0 m-auto hide");
 	$("#1").attr("class", "scene z-1 size-1 m-auto");
 	$("#2").attr("class", "scene z-2 size-2 m-auto");
@@ -115,8 +117,7 @@ function getRandomFromRange(min, max) {
 function lookAtPodium() {
 	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3" id="podium_input">
 		<div>you must give the forest a secret</div>
-		<input type="text" id="whisper_input">
-		<button id="submit_whisper" onclick="addWhisper()">Submit</button>
+		<input class="whisper_input" type="text" id="whisper_input">
 	</div>`);
 
 	document.getElementById("whisper_input").addEventListener("keypress", function(event){
