@@ -1,0 +1,13 @@
+.bg {
+    width: 500px;
+    height: 500px;
+    padding: 20px; /* Adjust the padding as needed */
+    background: 
+        linear-gradient(rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) top,
+        linear-gradient(rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) bottom,
+        linear-gradient(to left, rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) left,
+        linear-gradient(to right, rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) right,
+        blue;
+    background-size: 100% 20px, 100% 20px, 20px 100%, 20px 100%, auto;
+    background-repeat: no-repeat;
+}
