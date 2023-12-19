@@ -34,6 +34,7 @@ html, body {
 .z-4 { z-index: 80; }
 .z-5 { z-index: 100; }
 .z-6 { z-index: 120; }
+.z-7 { z-index: 140; }
 
 .size-1 {
 	top: 46%;
@@ -321,11 +322,40 @@ html, body {
 
 
 /*  Arch Scene Animations  */
+
 .fadeOutArch {
 	animation-name: fadeOutWhisper;
 	animation-duration: 3s;
 	animation-play-state: running;
 	animation-fill-mode: both;
 }
+
+.dust {
+	position: absolute;
+	left: 0;
+	bottom: -80%;
+	height: 200%;
+	opacity: 0.5;
+}
+
+@keyframes burntDustMovement {
+	0% {
+		left: -190%;
+		opacity: 0.5
+	}
+	25% { opacity: 0.15; }
+	50% { opacity: 0.5; }
+	75% { opacity: 0.5; }
+	100% {
+		left: 90%;
+	}
+}
+.burntDustMovement {
+	animation-name: burntDustMovement;
+	animation-duration: 30s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
 /*  Arch Scene Animations  */
 
