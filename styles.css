@@ -12,12 +12,19 @@ html, body {
 
 .scene {
 	position: absolute;
-	background-color: rgba(49, 65, 138, 0.25);
+	background-image: radial-gradient(farthest-side, rgba(49, 65, 138, 0.25), rgba(0, 0, 0, 0) 117%);
 	color: black;
 	width: 100%;
 	height: 100%;
 	text-align: center;
 }
+
+.scene.burnt {
+	background-image: none;
+}
+
+.scene.z-6.burnt { background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(190, 138, 88, 0.2)); }
+.scene.z--1.burnt { background-image: linear-gradient(rgba(49, 65, 138, 0.2), rgba(190, 138, 88)); }
 
 .z--1 { z-index: -10; };
 .z-0 { z-index: 0; }
@@ -69,8 +76,18 @@ html, body {
 	top: 70%;
 }
 
+.arch-img {
+	position: absolute;
+	bottom: 8.5%;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 90%;
+}
+
 .podium {
-	background-color: grey;
+	background-color: #a1a688;
+	border: 3px solid black;
+	border-radius: 5px;
 	width: 110px;
 	height: 150px;
 }
@@ -81,7 +98,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	background-color: grey;
+	background-color: #a1a688;
 	border-radius: 20px;
 	width: 220px;
 	height: 300px;
@@ -115,6 +132,12 @@ html, body {
 	left: -250%;
 	width: 600%;
 }
+
+.ground.burnt {
+	background-color: #353336;
+	/* #856B5E */
+}
+
 .wood {
 	position: absolute;
 	bottom: 5%;
@@ -129,6 +152,7 @@ html, body {
 .d { left: 65%; }
 
 /*  End of Tree Objects  */
+
 
 
 
@@ -292,4 +316,16 @@ html, body {
 }
 
 /*  End of Whispers  */
+
+
+
+
+/*  Arch Scene Animations  */
+.fadeOutArch {
+	animation-name: fadeOutWhisper;
+	animation-duration: 3s;
+	animation-play-state: running;
+	animation-fill-mode: both;
+}
+/*  Arch Scene Animations  */
 
