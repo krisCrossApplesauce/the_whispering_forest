@@ -19,12 +19,15 @@ function addWhisper() {
 
 	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3 hide" id="podium_input"></div>`);
 
-	if (value != "") {
+	if (value == /*!=*/ "") {
 		/* repairArchAnimation(); */
-		$("#arch-scene").remove();
 		secret_given = true;
 		$("#whisper").text("take a scroll through the forest");
 	}
+}
+
+
+function repairArchAnimation() {
 }
 
 
@@ -39,6 +42,9 @@ function animateThroughTrees(event) {
 		$("#scene-3").attr("id", "4");
 		$("#scene-4").attr("id", "5");
 		$("#scene-5").attr("id", "0");
+
+		$("#arch-scene").addClass("fadeOutArch");
+		$("#arch").addClass("fadeOutArch");
 
 		$("#1").addClass("moveTo1");
 		$("#2").addClass("moveTo2");
@@ -62,6 +68,10 @@ function animateThroughTrees(event) {
 }
 
 function whisperTrees() {
+	$("#arch-scene").children().remove();
+	$("#arch-scene").remove();
+	$("#arch").remove();
+
 	if (i >= whispers.length) {
 		i = 0;
 	}
