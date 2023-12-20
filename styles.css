@@ -28,14 +28,10 @@ main {
 
 .fg.burnt { background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(190, 138, 88, 0.2)); }
 .bg {
+	background-color: #052E1B;
 	background-image: url("images/forest_bg.png");
-	filter: blur(2px);
 }
-
-.bg.burnt {
-	background-image: linear-gradient(rgba(49, 65, 138, 0.2), rgba(190, 138, 88));
-	filter: blur(0px);
-}
+.bg.burnt { background-image: linear-gradient(rgba(49, 65, 138, 0.2), rgba(190, 138, 88)); }
 
 .z--1 { z-index: -10; };
 .z-0 { z-index: 0; }
@@ -384,22 +380,13 @@ main {
 }
 
 @keyframes burntDustMovement {
-	0% {
-		left: -190%;
-		opacity: 0.5
-	}
-	25% { opacity: 0.15; }
-	50% { opacity: 0.5; }
-	75% { opacity: 0.5; }
-	100% {
-		left: 60%;
-	}
+	0% { left: -180%; }
+	100% { left: 100%; }
 }
 .burntDustMovement {
 	animation-name: burntDustMovement;
-	animation-duration: 30s;
+	animation-duration: 60s;
 	animation-timing-function: linear;
-	animation-direction: alternate;
 	animation-iteration-count: infinite;
 	animation-fill-mode: both;
 }
