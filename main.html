@@ -49,24 +49,30 @@
 				</div>
 			-->
 
-			<div class="scene burnt z-6"></div>
-			<div class="scene burnt z--1"></div>
-			<div class="scene z--1"></div>
-			<img src="images/dust.png" class="dust z-6 burntDustMovement">
+				<div class="scene burnt z-6" id="fg"></div>
+				<div class="scene burnt z--1" id="bg"></div>
+				<img src="images/dust.png" class="dust z-6 burntDustMovement" id="dust">
+				<div class="ground burnt"></div>
 
 <!--  Arch Input Scene  -->
-			<div class="podium_input z-7 p-3 hide" id="podium_input">
-				<!--
-				<div>you must give the forest a secret</div>
-				<input class="whisper_input" type="text" id="whisper_input">
-				<button id="submit_whisper" onclick="addWhisper()">Submit</button>
-				-->
-			</div>
+				<div class="podium_input z-8 p-3 hide" id="podium_input">
+					<!--
+					<div>you must give the forest a secret</div>
+					<input class="whisper_input" type="text" id="whisper_input">
+					<button id="submit_whisper" onclick="addWhisper()">Submit</button>
+					-->
+				</div>
 <!--  End of Arch Input Scene  -->
+
+				<div class="scene burnt z-7 size-5 m-auto" id="podium-button">
+					<div class="arch_scene z-7 m-auto">
+						<div class="podium-button z-7 m-auto" onclick="lookAtPodium()"></div>
+					</div>
+				</div>
 
 				<div class="scene burnt z-5 size-5 m-auto" id="scene-5">
 					<div class="arch_scene z-7 m-auto" id="arch-scene">
-						<div class="podium m-auto" onclick="lookAtPodium()"></div>
+						<div class="podium m-auto"></div>
 					</div>
 					<div class="ground burnt"></div>
 				</div>
@@ -82,6 +88,7 @@
 
 				<div class="scene burnt z-2 size-2 m-auto" id="scene-2">
 					<div class="ground burnt"></div>
+					<img src="images/just_tree_1.png" class="just-tree1 obj" id="just-tree1">
 				</div>
 
 				<div class="scene burnt z-1 size-1 m-auto" id="scene-1">
