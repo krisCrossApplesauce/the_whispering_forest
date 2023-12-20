@@ -15,7 +15,7 @@ main {
 
 .scene {
 	position: absolute;
-	background-image: radial-gradient(farthest-side, rgba(49, 65, 138, 0.25), rgba(0, 0, 0, 0) 117%);
+	background-image: radial-gradient(farthest-side, rgba(38, 26, 21, 0.25), rgba(0, 0, 0, 0) 117%);
 	color: black;
 	width: 100%;
 	height: 100%;
@@ -324,8 +324,13 @@ main {
 }
 
 .whisper {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	word-wrap: break-word;
 	background-color: white;
 	border-radius: 20px;
+	max-width: 50%;
 }
 
 @keyframes fadeOutWhisper {
