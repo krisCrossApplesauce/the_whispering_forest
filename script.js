@@ -23,7 +23,7 @@ function addWhisper() {
 	$("#arch-piece2").removeClass("unfocused");
 	$("#just-tree1").removeClass("unfocused");
 
-	if (value == /*!=*/ "") {
+	if (value != "") {
 		repairArchAnimation();
 		$("#whisper").text("take a scroll through the forest");
 	}
@@ -177,7 +177,7 @@ function scrollThroughTrees() {
 
 
 
-/*  Random tree location funcs  */
+/*  Randomization funcs  */
 
 function getRandomFromRange(min, max) {
 	/* both min and max are included in the possible outcomes */
@@ -193,7 +193,7 @@ function getRandomWhisperPrompt() {
 	$("#whisper-prompt").text(`To enter the forest, you must give the forest a ${whisperPrompt[i]}.`);
 }
 
-/*  End of Random tree location funcs  */
+/*  End of Randomization funcs  */
 
 
 
