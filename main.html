@@ -40,7 +40,7 @@
 <!--  Forest Slider  -->
 			<div class="d-flex justify-content-center">
 
-				<div class="center whisper z-6 px-3 py-2" id="whisper">I am the forest of whispers</div>
+				<div class="center whisper z-6 px-3 py-2 hide" id="whisper">I am the forest of whispers</div>
 
 <!--
 				<div class="scene z--1 m-auto">
@@ -57,7 +57,7 @@
 <!--  Arch Input Scene  -->
 				<div class="podium_input z-8 p-3 hide" id="podium_input">
 					<!--
-					<div>you must give the forest a secret</div>
+					<div id="whisper-prompt">you must give the forest a secret</div>
 					<input class="whisper_input" type="text" id="whisper_input">
 					<button id="submit_whisper" onclick="addWhisper()">Submit</button>
 					-->
@@ -75,10 +75,13 @@
 						<div class="podium m-auto"></div>
 					</div>
 					<div class="ground burnt"></div>
+          <img src="images/tree_1.png" class="hide">
 				</div>
 
 				<div class="scene burnt z-4 size-4 m-auto" id="scene-4">
 					<img src="images/ruins_arch.png" class="arch-img m-auto" id="arch">
+          <img src="images/ruins_piece_2.png" class="arch-piece2" id="arch-piece2">
+          <img src="images/ruins_piece_1.png" class="arch-piece1" id="arch-piece1">
 					<div class="ground burnt"></div>
 				</div>
 
