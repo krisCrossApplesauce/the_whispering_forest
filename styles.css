@@ -151,7 +151,7 @@ main {
 
 
 
-/*  Tree Objects (semi-temporary)  */
+/*  Ground  */
 
 .back_ground {
 	position: absolute;
@@ -171,23 +171,17 @@ main {
 
 .ground.burnt {
 	background-color: #353336;
-	/* #856B5E */
+	/* color of dead grass blades? = #856B5E */
 }
 
-.wood {
-	position: absolute;
-	bottom: 5%;
-	background-color: #432109;
-	width: 10%;
-	height: 70%;
-}
+.gr5 { background-color: #0A5009; }
+.gr4 { background-color: #08440f; }
+.gr3 { background-color: #073f12; }
+.gr2 { background-color: #073b14; }
+.gr1 { background-color: #063716; }
+.gr0 { background-color: #063716; }
 
-.a { left: 10%; }
-.b { left: 85%; }
-.c { left: 35%; }
-.d { left: 65%; }
-
-/*  End of Tree Objects  */
+/*  End of Ground  */
 
 
 
