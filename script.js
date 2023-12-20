@@ -17,10 +17,12 @@ function addWhisper() {
 		input.value = "";
 	}
 
-	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3 hide" id="podium_input"></div>`);
+	$("#podium_input").replaceWith(`<div class="podium_input z-8 p-3 hide" id="podium_input"></div>`);
+	$("#arch").attr("class", "arch-img m-auto");
+	$("#just-tree1").attr("class", "just-tree1 obj");
 
 	if (value == /*!=*/ "") {
-		/* repairArchAnimation(); */
+		repairArchAnimation();
 		secret_given = true;
 		$("#whisper").text("take a scroll through the forest");
 	}
@@ -28,6 +30,24 @@ function addWhisper() {
 
 
 function repairArchAnimation() {
+	$("#podium-button").children().children().remove();
+	$("#podium-button").children().remove();
+	$("#podium-button").remove();
+	$("#arch-scene").children().remove();
+	$("#arch-scene").remove();
+
+	$("#dust").remove();
+	$("#fg").remove();
+	$("#bg").remove();
+
+	/**
+	 * create animations for:
+	 * trees growing(?)
+	 * the grass turning green and growing
+	 * the background changing
+	 * the dust leaving
+	 * and the arch repairing itself
+	 */
 }
 
 
@@ -35,7 +55,6 @@ function repairArchAnimation() {
 
 function animateThroughTrees(event) {
 	if (event.deltaY > 0 && timer === null && secret_given === true) {
-
 		$("#scene-0").attr("id", "1");
 		$("#scene-1").attr("id", "2");
 		$("#scene-2").attr("id", "3");
@@ -124,18 +143,26 @@ function getRandomFromRange(min, max) {
 
 /*  Arch Scene  */
 
-function lookAtPodium() {
-	$("#podium_input").replaceWith(`<div class="podium_input z-6 p-3" id="podium_input">
-		<div>you must give the forest a secret</div>
-		<input class="whisper_input" type="text" id="whisper_input">
-	</div>`);
 
-	document.getElementById("whisper_input").addEventListener("keypress", function(event){
-		if (event.key === "Enter") {
-			event.preventDefault();
-			addWhisper();
-		}
-	});
+function lookAtPodium() {
+	if (secret_given === false) {
+		$("#podium_input").replaceWith(`<div class="podium_input z-8 p-3" id="podium_input">
+			<div>you must give the forest a secret</div>
+			<input class="whisper_input" type="text" id="whisper_input">
+		</div>`);
+
+		$("#arch").addClass("unfocused");
+		$("#just-tree1").addClass("unfocused");
+
+		/* create an animation for zooming in on the podium to read and carve into it */
+
+		document.getElementById("whisper_input").addEventListener("keypress", function(event){
+			if (event.key === "Enter") {
+				event.preventDefault();
+				addWhisper();
+			}
+		});
+	}
 }
 
 /*  End of Arch Scene  */
