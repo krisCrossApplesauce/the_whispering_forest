@@ -1,6 +1,6 @@
-const boing = new Audio('./assets/jump.mp3');
-boing.playbackRate = 1.7;
-boing.volume = 0.1;
+const boing = new Audio('./sounds/footsteps.wav');
+boing.playbackRate = 1;
+boing.volume = 1;
 var timer = null;
 var secret_given = false;
 
