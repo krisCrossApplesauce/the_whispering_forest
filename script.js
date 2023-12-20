@@ -185,8 +185,8 @@ function getRandomFromRange(min, max) {
 }
 
 function getRandomWhisperPrompt() {
-	const whisperPrompt = ["secret", "worry", "question", "thought"];
-	let i = getRandomFromRange(0, 3);
+	const whisperPrompt = ["secret", "worry", "question", "thought", "feeling"];
+	let i = getRandomFromRange(0, 4);
 
 	console.log(i);
 
