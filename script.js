@@ -18,12 +18,13 @@ function addWhisper() {
 	}
 
 	$("#podium_input").replaceWith(`<div class="podium_input z-8 p-3 hide" id="podium_input"></div>`);
-	$("#arch").attr("class", "arch-img m-auto");
-	$("#just-tree1").attr("class", "just-tree1 obj");
+	$("#arch").removeClass("unfocused");
+	$("#arch-piece1").removeClass("unfocused");
+	$("#arch-piece2").removeClass("unfocused");
+	$("#just-tree1").removeClass("unfocused");
 
 	if (value == /*!=*/ "") {
 		repairArchAnimation();
-		secret_given = true;
 		$("#whisper").text("take a scroll through the forest");
 	}
 }
@@ -37,7 +38,7 @@ function repairArchAnimation() {
 	$("#arch-scene").remove();
 
 	$("#dust").attr("class", "dust z-6 goodbyeDust");
-	$("#bg").remove();
+	$("#bg").addClass("clearSky");
 	$("#fg").addClass("clearSky");
 
 	$("#scene-5").addClass("addDepth");
@@ -56,33 +57,43 @@ function repairArchAnimation() {
 
 	/**
 	 * create animations for:
-	 * trees growing(?)
-	 * the grass turning green and growing
-	 * the background changing
-	 * the dust leaving
-	 * and the arch repairing itself
+	 * trees growing(?) [ ]
+	 * the grass turning green [X]
+	 * ^and growing [ ]
+	 * the background changing [~]
+	 * the dust leaving [X]
+	 * and the arch repairing itself [ ]
 	 */
 
-	timer = setTimeout(finishArchStuff, 20000);
+	timer = setTimeout(finishArchStuff, 10000);
 }
 
 function finishArchStuff() {
-	$("#scene-5").removeClass("burnt");
-	$("#scene-4").removeClass("burnt");
-	$("#scene-3").removeClass("burnt");
-	$("#scene-2").removeClass("burnt");
-	$("#scene-1").removeClass("burnt");
-	$("#scene-0").removeClass("burnt");
+	$("#scene-5").removeClass("burnt addDepth");
+	$("#scene-4").removeClass("burnt addDepth");
+	$("#scene-3").removeClass("burnt addDepth");
+	$("#scene-2").removeClass("burnt addDepth");
+	$("#scene-1").removeClass("burnt addDepth");
+	$("#scene-0").removeClass("burnt addDepth");
 
-	$("#scene-5").children(".ground").removeClass("burnt");
-	$("#scene-4").children(".ground").removeClass("burnt");
-	$("#scene-3").children(".ground").removeClass("burnt");
-	$("#scene-2").children(".ground").removeClass("burnt");
-	$("#scene-1").children(".ground").removeClass("burnt");
-	$("#scene-0").children(".ground").removeClass("burnt");
+	$("#scene-5").children(".ground").removeClass("burnt grassHeals");
+	$("#scene-4").children(".ground").removeClass("burnt grassHeals");
+	$("#scene-3").children(".ground").removeClass("burnt grassHeals");
+	$("#scene-2").children(".ground").removeClass("burnt grassHeals");
+	$("#scene-1").children(".ground").removeClass("burnt grassHeals");
+	$("#scene-0").children(".ground").removeClass("burnt grassHeals");
 
 	$("#dust").remove();
 	$("#fg").remove();
+
+	$("#whisper").removeClass("hide");
+	$("#whisper").addClass("fadeInWhisper");
+
+	timer = setTimeout(function() {
+		secret_given = true;
+		clearTimeout(timer);
+		timer = null;
+	}, 1000);
 }
 
 
@@ -97,8 +108,9 @@ function animateThroughTrees(event) {
 		$("#scene-4").attr("id", "5");
 		$("#scene-5").attr("id", "0");
 
-		$("#arch-scene").addClass("fadeOutArch");
 		$("#arch").addClass("fadeOutArch");
+		$("#arch-piece1").addClass("fadeOutArch");
+		$("#arch-piece2").addClass("fadeOutArch");
 
 		$("#1").addClass("moveTo1");
 		$("#2").addClass("moveTo2");
@@ -168,8 +180,16 @@ function scrollThroughTrees() {
 
 function getRandomFromRange(min, max) {
 	/* both min and max are included in the possible outcomes */
-	max += 1;
-	return Math.floor(Math.random * (max - min) + min);
+	return Math.floor(Math.random() * ((max + 1) - min) + min);
+}
+
+function getRandomWhisperPrompt() {
+	const whisperPrompt = ["secret", "worry", "question", "thought"];
+	let i = getRandomFromRange(0, 3);
+
+	console.log(i);
+
+	$("#whisper-prompt").text(`To enter the forest, you must give the forest a ${whisperPrompt[i]}.`);
 }
 
 /*  End of Random tree location funcs  */
@@ -182,11 +202,15 @@ function getRandomFromRange(min, max) {
 function lookAtPodium() {
 	if (secret_given === false) {
 		$("#podium_input").replaceWith(`<div class="podium_input z-8 p-3" id="podium_input">
-			<div>you must give the forest a secret</div>
+			<div id="whisper-prompt"></div>
 			<input class="whisper_input" type="text" id="whisper_input">
 		</div>`);
 
+		getRandomWhisperPrompt();
+
 		$("#arch").addClass("unfocused");
+		$("#arch-piece1").addClass("unfocused");
+		$("#arch-piece2").addClass("unfocused");
 		$("#just-tree1").addClass("unfocused");
 
 		/* create an animation for zooming in on the podium to read and carve into it */

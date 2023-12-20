@@ -80,10 +80,26 @@ html, body {
 
 .arch-img {
 	position: absolute;
-	bottom: 8.5%;
+	bottom: 9%;
 	left: 50%;
 	transform: translateX(-50%);
 	height: 90%;
+}
+
+.arch-piece1 {
+	position: absolute;
+	bottom: 9.2%;
+	left: 63%;
+	height: 22%;
+	rotate: 10deg;
+}
+
+.arch-piece2 {
+	position: absolute;
+	bottom: 9.5%;
+	left: 50%;
+	height: 22%;
+	rotate: 120deg;
 }
 
 .podium {
@@ -388,7 +404,7 @@ html, body {
 }
 .clearSky {
 	animation-name: clearSky;
-	animation-duration: 20s;
+	animation-duration: 10s;
 	animation-play-state: running;
 	animation-fill-mode: both;
 }
@@ -399,7 +415,7 @@ html, body {
 }
 .addDepth {
 	animation-name: addDepth;
-	animation-duration: 20s;
+	animation-duration: 10s;
 	animation-play-state: running;
 	animation-timing-function: linear;
 }
@@ -410,8 +426,9 @@ html, body {
 }
 .grassHeals {
 	animation-name: grassHeals;
-	animation-duration: 20s;
+	animation-duration: 10s;
 	animation-play-state: running;
+	animation-timing-function: linear;
 	animation-fill-mode: both;
 }
 
