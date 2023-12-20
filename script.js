@@ -65,7 +65,7 @@ function repairArchAnimation() {
 	 * and the arch repairing itself [ ]
 	 */
 
-	timer = setTimeout(finishArchStuff, 10000);
+	timer = setTimeout(finishArchStuff, 0);
 }
 
 function finishArchStuff() {
@@ -85,6 +85,7 @@ function finishArchStuff() {
 
 	$("#dust").remove();
 	$("#fg").remove();
+	$("#bg").removeClass("burnt clearSky");
 
 	$("#whisper").removeClass("hide");
 	$("#whisper").addClass("fadeInWhisper");
