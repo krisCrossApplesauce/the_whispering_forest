@@ -36,9 +36,23 @@ function repairArchAnimation() {
 	$("#arch-scene").children().remove();
 	$("#arch-scene").remove();
 
-	$("#dust").remove();
-	$("#fg").remove();
+	$("#dust").attr("class", "dust z-6 goodbyeDust");
 	$("#bg").remove();
+	$("#fg").addClass("clearSky");
+
+	$("#scene-5").addClass("addDepth");
+	$("#scene-4").addClass("addDepth");
+	$("#scene-3").addClass("addDepth");
+	$("#scene-2").addClass("addDepth");
+	$("#scene-1").addClass("addDepth");
+	$("#scene-0").addClass("addDepth");
+
+	$("#scene-5").children(".ground").addClass("grassHeals");
+	$("#scene-4").children(".ground").addClass("grassHeals");
+	$("#scene-3").children(".ground").addClass("grassHeals");
+	$("#scene-2").children(".ground").addClass("grassHeals");
+	$("#scene-1").children(".ground").addClass("grassHeals");
+	$("#scene-0").children(".ground").addClass("grassHeals");
 
 	/**
 	 * create animations for:
@@ -48,6 +62,27 @@ function repairArchAnimation() {
 	 * the dust leaving
 	 * and the arch repairing itself
 	 */
+
+	timer = setTimeout(finishArchStuff, 20000);
+}
+
+function finishArchStuff() {
+	$("#scene-5").removeClass("burnt");
+	$("#scene-4").removeClass("burnt");
+	$("#scene-3").removeClass("burnt");
+	$("#scene-2").removeClass("burnt");
+	$("#scene-1").removeClass("burnt");
+	$("#scene-0").removeClass("burnt");
+
+	$("#scene-5").children(".ground").removeClass("burnt");
+	$("#scene-4").children(".ground").removeClass("burnt");
+	$("#scene-3").children(".ground").removeClass("burnt");
+	$("#scene-2").children(".ground").removeClass("burnt");
+	$("#scene-1").children(".ground").removeClass("burnt");
+	$("#scene-0").children(".ground").removeClass("burnt");
+
+	$("#dust").remove();
+	$("#fg").remove();
 }
 
 

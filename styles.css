@@ -365,14 +365,54 @@ html, body {
 	50% { opacity: 0.5; }
 	75% { opacity: 0.5; }
 	100% {
-		left: 90%;
+		left: 60%;
 	}
 }
 .burntDustMovement {
 	animation-name: burntDustMovement;
 	animation-duration: 30s;
+	animation-timing-function: linear;
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+}
+
+.goodbyeDust {
+	transition: transform 20s;
+	transform: translateX(300%);
+}
+
+@keyframes clearSky {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+.clearSky {
+	animation-name: clearSky;
+	animation-duration: 20s;
+	animation-play-state: running;
+	animation-fill-mode: both;
+}
+
+@keyframes addDepth {
+	from { background-color: rgba(0, 0, 0, 0); }
+	to { background-color: rgba(49, 65, 138, 0.1); }
+}
+.addDepth {
+	animation-name: addDepth;
+	animation-duration: 20s;
+	animation-play-state: running;
+	animation-timing-function: linear;
+}
+
+@keyframes grassHeals {
+	from { background-color: #353336; }
+	to { background-color: #7ba428; }
+}
+.grassHeals {
+	animation-name: grassHeals;
+	animation-duration: 20s;
+	animation-play-state: running;
+	animation-fill-mode: both;
 }
 
 /*  Arch Scene Animations  */
