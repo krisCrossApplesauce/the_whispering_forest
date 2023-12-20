@@ -139,11 +139,12 @@ function whisperTrees() {
 	$("#arch-scene").remove();
 	$("#arch").remove();
 
-	if (i >= whispers.length) {
-		i = 0;
-	}
-	$("#whisper").text(whispers[i]);
-	i++;
+	// if (i >= whispers.length) {
+	// 	i = 0;
+	// }
+	// $("#whisper").text(whispers[i]);
+	// i++;
+	fillSecrets();
 	$("#whisper").attr("class", "center whisper z-6 px-3 py-2 fadeInWhisper");
 
 	timer = setTimeout(scrollThroughTrees, 1000);
@@ -191,6 +192,27 @@ function getRandomWhisperPrompt() {
 	console.log(i);
 
 	$("#whisper-prompt").text(`To enter the forest, you must give the forest a ${whisperPrompt[i]}.`);
+}
+
+// Function to pick a random item from an array
+function getRandomItem(array) {
+	console.log("Random function!");
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+}
+
+// Fetch the JSON file asynchronously
+function fillSecrets() {
+	fetch('secrets.json')
+    .then(response => response.json())
+    .then(data => {
+        const secretsArray = data.secrets;
+        const randomSecret = getRandomItem(secretsArray);
+
+        // Set the content of the paragraph to the randomly picked string
+        document.getElementById('whisper').textContent = randomSecret;
+    })
+    .catch(error => console.error('Error fetching data.json:', error));
 }
 
 /*  End of Randomization funcs  */
