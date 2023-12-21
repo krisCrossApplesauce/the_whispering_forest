@@ -1,5 +1,5 @@
 const boing = new Audio('./sounds/footsteps.wav');
-boing.playbackRate = 1;
+boing.playbackRate = 0.5;
 boing.volume = 1;
 var timer = null;
 var secret_given = false;
@@ -121,6 +121,8 @@ function animateThroughTrees(event) {
 		$("#0").addClass("moveTo0");
 		$("#whisper").attr("class", "center whisper z-6 px-3 py-2 fadeOutWhisper");
 
+		boing.play();
+
 		timer = setTimeout(whisperTrees, 2000);
 	}
 	else if (event.deltaY <= 0) {
@@ -168,7 +170,7 @@ function scrollThroughTrees() {
 	$("#4").attr("id", "scene-4");
 	$("#5").attr("id", "scene-5");
 
-	boing.play();
+	boing.pause();
 	clearTimeout(timer);
 	timer = null;
 	console.log("scroll function has been called");
