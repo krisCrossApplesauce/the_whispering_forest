@@ -7,46 +7,67 @@ html, body {
 	overflow: hidden;
 }
 
+main {
+	background-color: #052E1B;
+}
 
 /* stuff */
 
 .scene {
 	position: absolute;
-	background-color: rgba(49, 65, 138, 0.25);
+	background-image: radial-gradient(farthest-side, rgba(38, 26, 21, 0.25), rgba(0, 0, 0, 0) 117%);
 	color: black;
 	width: 100%;
 	height: 100%;
 	text-align: center;
 }
 
-.z--1 { z-index: -1; };
+.scene.burnt {
+	background-image: none;
+}
+
+.fg.burnt { background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(190, 138, 88, 0.2)); }
+.bg {
+	background-color: #052E1B;
+	background-image: url("images/forest_bg.png");
+}
+.bg.burnt { background-image: linear-gradient(rgba(49, 65, 138, 0.2), rgba(190, 138, 88)); }
+
+.z--1 { z-index: -10; };
 .z-0 { z-index: 0; }
-.z-1 { z-index: 1; }
-.z-2 { z-index: 2; }
-.z-3 { z-index: 3; }
-.z-4 { z-index: 4; }
-.z-5 { z-index: 5; }
-.z-6 { z-index: 6; }
+.z-1 { z-index: 20; }
+.z-2 { z-index: 40; }
+.z-3 { z-index: 60; }
+.z-4 { z-index: 80; }
+.z-5 { z-index: 100; }
+.z-6 { z-index: 120; }
+.z-7 { z-index: 140; }
+.z-8 { z-index: 160; }
 
 .size-1 {
-	top: 45%;
+	top: 46%;
 	width: 30%;
 	height: 30%;
 }
 .size-2 {
-	top: 38%;
-	width: 40%;
-	height: 40%;
+	top: 35%;
+	width: 45%;
+	height: 45%;
 }
 .size-3 {
-	top: 27%;
-	width: 55%;
-	height: 55%;
+	top: 25%;
+	width: 60%;
+	height: 60%;
 }
 .size-4 {
-	top: 15%;
-	width: 75%;
-	height: 75%;
+	top: 10%;
+	width: 85%;
+	height: 85%;
+}
+.size-5 {
+	top: -30%;
+	width: 140%;
+	height: 140%;
 }
 
 .hide { opacity: 0; }
@@ -55,52 +76,113 @@ html, body {
 
 
 
-/*  End of Tree Objects  */
+/*  Arch Scene Stuff  */
+
+.arch_scene {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 70%;
+}
+
+.arch-img {
+	position: absolute;
+	bottom: 9%;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 90%;
+}
+
+.arch-piece1 {
+	position: absolute;
+	bottom: 9.2%;
+	left: 63%;
+	height: 22%;
+	rotate: 10deg;
+}
+
+.arch-piece2 {
+	position: absolute;
+	bottom: 9.5%;
+	left: 50%;
+	height: 22%;
+	rotate: 120deg;
+}
+
+.podium {
+	background-color: #D6D8AF;
+	border: 3px solid black;
+	border-radius: 5px;
+	width: 110px;
+	height: 150px;
+}
+
+.podium-button {
+	width: 110px;
+	height: 150px;
+}
+
+.podium_input {
+	/* fix the textbox!!! */
+	position: absolute;
+	top: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: #D6D8AF;
+	border: 3px solid black;
+	border-radius: 20px;
+	width: 220px;
+	height: 300px;
+	text-align: center;
+}
+
+.unfocused {
+	filter: blur(3px);
+}
+
+.whisper_input {
+	border: none;
+	background-color: rgba(0, 0, 0, 0.1);
+	height: 150px;
+}
+
+/*  End of Arch Scene Stuff  */
+
+
+
+/*  Ground  */
 
 .back_ground {
 	position: absolute;
-	bottom: 11%;
-	height: 13%;
+	bottom: 0;
+	height: 24%;
 	width: 100%;
-	border-bottom: 13.2vh solid #7ba428;
-	border-left: 22.5vw solid transparent;
-	border-right: 22.5vw solid transparent;
 }
 
 .ground {
 	position: absolute;
 	bottom: 0;
 	background-color: #7ba428;
-	height: 11%;
-	width: 100%;
-}
-.wood {
-	position: absolute;
-	bottom: 5%;
-	background-color: #432109;
-	width: 8%;
-	height: 70%;
-}
-.leaves {
-	position: absolute;
-	top: 0;
-	background-color: #196719;
-	width: 34%;
-	height: 30%;
-	border-radius: 30px;
+	height: 12%;
+	left: -250%;
+	width: 600%;
 }
 
-.wood.a { left: 10%; }
-.wood.b { left: 85%; }
-.wood.c { left: 35%; }
-.wood.d { left: 65%; }
+.ground.burnt {
+	background-color: #353336;
+	/* color of dead grass blades? = #856B5E */
+}
 
-.leaves.a { left: -3%; }
-.leaves.b { left: 72%;}
-.leaves.c { left: 22%; }
-.leaves.d { left: 52%; }
+.gr5 { background-color: #0A5009; }
+.gr4 { background-color: #08440f; }
+.gr3 { background-color: #073f12; }
+.gr2 { background-color: #073b14; }
+.gr1 { background-color: #063716; }
+.gr0 { background-color: #063716; }
 
-/*  End of Tree Objects  */
+/*  End of Ground  */
+
 
 
 
@@ -112,12 +194,14 @@ html, body {
 		opacity: 0;
 		width: 10%;
 		height: 10%;
+		filter: blur(5px);
 	}
 	to {
-		top: 45%;
+		top: 46%;
 		opacity: 1;
 		width: 30%;
 		height: 30%;
+		filter: blur(0px);
 	}
 }
 .moveTo1 {
@@ -129,14 +213,14 @@ html, body {
 
 @keyframes moveTo2 {
 	from {
-		top: 45%;
+		top: 46%;
 		width: 30%;
 		height: 30%;
 	}
 	to {
-		top: 38%;
-		width: 40%;
-		height: 40%;
+		top: 35%;
+		width: 45%;
+		height: 45%;
 	}
 }
 .moveTo2 {
@@ -148,14 +232,14 @@ html, body {
 
 @keyframes moveTo3 {
 	from {
-		top: 38%;
-		width: 40%;
-		height: 40%;
+		top: 35%;
+		width: 45%;
+		height: 45%;
 	}
 	to {
-		top: 27%;
-		width: 55%;
-		height: 55%;
+		top: 25%;
+		width: 60%;
+		height: 60%;
 	}
 }
 .moveTo3 {
@@ -167,14 +251,14 @@ html, body {
 
 @keyframes moveTo4 {
 	from {
-		top: 27%;
-		width: 55%;
-		height: 55%;
+		top: 25%;
+		width: 60%;
+		height: 60%;
 	}
 	to {
-		top: 15%;
-		width: 75%;
-		height: 75%;
+		top: 10%;
+		width: 85%;
+		height: 85%;
 	}
 }
 .moveTo4 {
@@ -186,14 +270,14 @@ html, body {
 
 @keyframes moveTo5 {
 	from {
-		top: 15%;
-		width: 75%;
-		height: 75%;
+		top: 10%;
+		width: 85%;
+		height: 85%;
 	}
 	to {
-		top: 0;
-		width: 100%;
-		height: 100%;
+		top: -30%;
+		width: 140%;
+		height: 140%;
 	}
 }
 .moveTo5 {
@@ -205,16 +289,18 @@ html, body {
 
 @keyframes moveTo0 {
 	from {
-		top: 0;
+		top: -30%;
 		opacity: 1;
-		width: 100%;
-		height: 100%;
+		width: 140%;
+		height: 140%;
+		filter: blur(0px);
 	}
 	to {
 		top: -150%;
 		opacity: 0;
 		width: 300%;
 		height: 300%;
+		filter: blur(5px);
 	}
 }
 .moveTo0 {
@@ -236,8 +322,13 @@ html, body {
 }
 
 .whisper {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	word-wrap: break-word;
 	background-color: white;
 	border-radius: 20px;
+	max-width: 50%;
 }
 
 @keyframes fadeOutWhisper {
@@ -264,4 +355,83 @@ html, body {
 }
 
 /*  End of Whispers  */
+
+
+
+
+/*  Arch Scene Animations  */
+
+.fadeOutArch {
+	animation-name: fadeOutWhisper;
+	animation-duration: 3s;
+	animation-play-state: running;
+	animation-fill-mode: both;
+}
+
+.dust {
+	position: absolute;
+	left: 0;
+	bottom: -80%;
+	height: 200%;
+	opacity: 0.5;
+}
+
+.just-tree1 {
+	position: absolute;
+	bottom: 5%;
+	height: 100%;
+}
+
+@keyframes burntDustMovement {
+	0% { left: -180%; }
+	100% { left: 100%; }
+}
+.burntDustMovement {
+	animation-name: burntDustMovement;
+	animation-duration: 60s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+}
+
+.goodbyeDust {
+	transition: transform 20s;
+	transform: translateX(300%);
+}
+
+@keyframes clearSky {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+.clearSky {
+	animation-name: clearSky;
+	animation-duration: 10s;
+	animation-play-state: running;
+	animation-fill-mode: both;
+}
+
+@keyframes addDepth {
+	from { background-color: rgba(0, 0, 0, 0); }
+	to { background-color: rgba(49, 65, 138, 0.1); }
+}
+.addDepth {
+	animation-name: addDepth;
+	animation-duration: 5s;
+	animation-play-state: running;
+	animation-timing-function: linear;
+}
+
+@keyframes grassHeals {
+	from { background-color: #353336; }
+	to { background-color: #7ba428; }
+}
+.grassHeals {
+	animation-name: grassHeals;
+	animation-duration: 5s;
+	animation-play-state: running;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+}
+
+/*  Arch Scene Animations  */
 

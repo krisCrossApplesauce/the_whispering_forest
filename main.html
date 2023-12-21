@@ -35,76 +35,75 @@
 	</head>
 
 	<body onwheel="animateThroughTrees(event)">
-		<main>
+		<main class="burnt">
 
-<!--  Tree Slider  -->
+<!--  Forest Slider  -->
 			<div class="d-flex justify-content-center">
 
-<!--  Whisper Input  -->
-				<div class="d-flex z-6">
-					<div>you must give the forest a secret</div>
-					<input type="text" id="whisper_input">
-					<button onclick="addWhisper()">Submit</button>
-				</div>
-<!--  End of Whisper Input  -->
+				<div class="center whisper z-6 px-3 py-2 hide" id="whisper">I am the forest of whispers</div>
 
-				<div class="center whisper z-6 px-3 py-2" id="whisper">I am the forest of whispers</div>
-
+<!--
 				<div class="scene z--1 m-auto">
 					<div class="back_ground"></div>
 					<div class="ground"></div>
 				</div>
+			-->
 
-				<div class="scene z-5 m-auto" id="scene-5">
-					<div class="ground"></div>
-					<div>
-						<div class="wood a"></div>
-						<div class="leaves a"></div>
+				<div class="scene fg burnt z-6" id="fg"></div>
+				<div class="scene bg burnt z--1" id="bg"></div>
+				<img src="images/dust.png" class="dust z-6 burntDustMovement" id="dust">
+				<div class="ground burnt"></div>
+
+<!--  Arch Input Scene  -->
+				<div class="podium_input z-8 p-3 hide" id="podium_input">
+					<!--
+					<div id="whisper-prompt">you must give the forest a secret</div>
+					<input class="whisper_input" type="text" id="whisper_input">
+					<button id="submit_whisper" onclick="addWhisper()">Submit</button>
+					-->
+				</div>
+<!--  End of Arch Input Scene  -->
+
+				<div class="scene burnt z-7 size-5 m-auto" id="podium-button">
+					<div class="arch_scene z-7 m-auto">
+						<div class="podium-button z-7 m-auto" onclick="lookAtPodium()"></div>
 					</div>
 				</div>
 
-				<div class="scene z-4 size-4 m-auto" id="scene-4">
-					<div class="ground"></div>
-					<div>
-						<div class="wood d"></div>
-						<div class="leaves d"></div>
+				<div class="scene burnt z-5 size-5 m-auto" id="scene-5">
+					<div class="arch_scene z-7 m-auto" id="arch-scene">
+						<div class="podium m-auto"></div>
 					</div>
+					<div class="ground burnt gr5"></div>
+          <img src="images/tree_1.png" class="hide">
 				</div>
 
-				<div class="scene z-3 size-3 m-auto" id="scene-3">
-					<div class="ground"></div>
-					<div>
-						<div class="wood a"></div>
-						<div class="leaves a"></div>
-					</div>
+				<div class="scene burnt z-4 size-4 m-auto" id="scene-4">
+					<img src="images/ruins_arch.png" class="arch-img m-auto" id="arch">
+          <img src="images/ruins_piece_2.png" class="arch-piece2" id="arch-piece2">
+          <img src="images/ruins_piece_1.png" class="arch-piece1" id="arch-piece1">
+					<div class="ground burnt gr4"></div>
 				</div>
 
-				<div class="scene z-2 size-2 m-auto" id="scene-2">
-					<div class="ground"></div>
-					<div>
-						<div class="wood b"></div>
-						<div class="leaves b"></div>
-					</div>
+				<div class="scene burnt z-3 size-3 m-auto" id="scene-3">
+					<div class="ground burnt gr3"></div>
 				</div>
 
-				<div class="scene z-1 size-1 m-auto" id="scene-1">
-					<div class="ground"></div>
-					<div>
-						<div class="wood c"></div>
-						<div class="leaves c"></div>
-					</div>
+				<div class="scene burnt z-2 size-2 m-auto" id="scene-2">
+					<div class="ground burnt gr2"></div>
+					<img src="images/just_tree_1.png" class="just-tree1 obj" id="just-tree1">
 				</div>
 
-				<div class="scene z-0 m-auto hide" id="scene-0">
-					<div class="ground"></div>
-					<div>
-						<div class="wood d"></div>
-						<div class="leaves d"></div>
-					</div>
+				<div class="scene burnt z-1 size-1 m-auto" id="scene-1">
+					<div class="ground burnt gr1"></div>
+				</div>
+
+				<div class="scene burnt z-0 m-auto hide" id="scene-0">
+					<div class="ground burnt gr0"></div>
 				</div>
 
 			</div>
-<!--  End of Tree Slider  -->
+<!--  End of Forest Slider  -->
 
 		</main>
 	</body>
