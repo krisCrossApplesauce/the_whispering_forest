@@ -1,6 +1,8 @@
 const boing = new Audio('./sounds/footsteps.wav');
+
 boing.playbackRate = 1;
 boing.volume = 0.25;
+
 var timer = null;
 var secret_given = false;
 
