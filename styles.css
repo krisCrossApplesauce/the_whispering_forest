@@ -71,6 +71,7 @@ main {
 }
 
 .hide { opacity: 0; }
+.show { opacity: 1;}
 
 /* end of stuff */
 
@@ -382,21 +383,31 @@ main {
 	position: absolute;
 	bottom: 5%;
 	height: 100%;
+	left: -20%;
 }
 .just-tree2 {
 	position: absolute;
 	bottom: 5%;
 	height: 100%;
+	left: 10%;
 }
 .just-tree3 {
 	position: absolute;
 	bottom: 5%;
 	height: 100%;
+	left: 50%;
 }
 .just-tree4 {
 	position: absolute;
 	bottom: 5%;
 	height: 100%;
+	left: 80%;
+}
+.just-tree5 {
+	position: absolute;
+	bottom: 5%;
+	height: 100%;
+	left: 100%;
 }
 
 @keyframes burntDustMovement {
