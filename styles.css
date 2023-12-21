@@ -440,22 +440,22 @@ main {
 
 @keyframes addDepth {
 	from { background-color: rgba(0, 0, 0, 0); }
-	to { background-color: rgba(49, 65, 138, 0.1); }
+	to { background-color: rgba(38, 26, 21, 0.1); }
 }
 .addDepth {
 	animation-name: addDepth;
-	animation-duration: 5s;
+	animation-duration: 10s;
 	animation-play-state: running;
 	animation-timing-function: linear;
 }
 
 @keyframes grassHeals {
 	from { background-color: #353336; }
-	to { background-color: #7ba428; }
+	to { background-color: #0A5009; }
 }
 .grassHeals {
 	animation-name: grassHeals;
-	animation-duration: 5s;
+	animation-duration: 10s;
 	animation-play-state: running;
 	animation-timing-function: linear;
 	animation-fill-mode: both;

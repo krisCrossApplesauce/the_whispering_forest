@@ -1,6 +1,7 @@
 const boing = new Audio('./sounds/footsteps.wav');
-boing.playbackRate = 0.5;
-boing.volume = 1;
+boing.playbackRate = 1;
+boing.volume = 0.25;
+
 var timer = null;
 var secret_given = false;
 
@@ -38,7 +39,6 @@ function repairArchAnimation() {
 	$("#arch-scene").remove();
 
 	$("#dust").attr("class", "dust z-6 goodbyeDust");
-	$("#bg").addClass("clearSky");
 	$("#fg").addClass("clearSky");
 
 	$("#scene-5").addClass("addDepth");
@@ -69,7 +69,7 @@ function repairArchAnimation() {
 	 * and the arch repairing itself [ ]
 	 */
 
-	timer = setTimeout(finishArchStuff, 0);
+	timer = setTimeout(finishArchStuff, 10000);
 }
 
 function finishArchStuff() {
@@ -89,7 +89,7 @@ function finishArchStuff() {
 
 	$("#dust").remove();
 	$("#fg").remove();
-	$("#bg").removeClass("burnt clearSky");
+	$("#bg").removeClass("burnt");
 
 	$("#whisper").removeClass("hide");
 	$("#whisper").addClass("fadeInWhisper");
@@ -167,6 +167,13 @@ function scrollThroughTrees() {
 	$("#4").attr("class", "scene z-4 size-4 m-auto");
 	$("#5").attr("class", "scene z-5 size-5 m-auto");
 
+	$("#0").children(".ground").attr("class", "ground gr0");
+	$("#1").children(".ground").attr("class", "ground gr1");
+	$("#2").children(".ground").attr("class", "ground gr2");
+	$("#3").children(".ground").attr("class", "ground gr3");
+	$("#4").children(".ground").attr("class", "ground gr4");
+	$("#5").children(".ground").attr("class", "ground gr5");
+
 	$("#0").attr("id", "scene-0");
 	$("#1").attr("id", "scene-1");
 	$("#2").attr("id", "scene-2");
@@ -210,15 +217,15 @@ function getRandomItem(array) {
 // Fetch the JSON file asynchronously
 function fillSecrets() {
 	fetch('secrets.json')
-    .then(response => response.json())
-    .then(data => {
-        const secretsArray = data.secrets;
-        const randomSecret = getRandomItem(secretsArray);
+		.then(response => response.json())
+		.then(data => {
+			const secretsArray = data.secrets;
+			const randomSecret = getRandomItem(secretsArray);
 
-        // Set the content of the paragraph to the randomly picked string
-        document.getElementById('whisper').textContent = randomSecret;
-    })
-    .catch(error => console.error('Error fetching data.json:', error));
+			// Set the content of the paragraph to the randomly picked string
+			document.getElementById('whisper').textContent = randomSecret;
+		})
+		.catch(error => console.error('Error fetching data.json:', error));
 }
 
 /*  End of Randomization funcs  */
