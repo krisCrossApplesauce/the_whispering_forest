@@ -165,8 +165,10 @@ main {
 	bottom: 0;
 	background-color: #7ba428;
 	height: 12%;
-	left: -250%;
+	left: 50%;
 	width: 600%;
+	max-width: 100vw;
+	transform: translateX(-50%);
 }
 
 .ground.burnt {
@@ -377,6 +379,21 @@ main {
 }
 
 .just-tree1 {
+	position: absolute;
+	bottom: 5%;
+	height: 100%;
+}
+.just-tree2 {
+	position: absolute;
+	bottom: 5%;
+	height: 100%;
+}
+.just-tree3 {
+	position: absolute;
+	bottom: 5%;
+	height: 100%;
+}
+.just-tree4 {
 	position: absolute;
 	bottom: 5%;
 	height: 100%;
