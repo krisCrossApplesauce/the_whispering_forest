@@ -54,6 +54,10 @@ function repairArchAnimation() {
 	$("#scene-2").children(".ground").addClass("grassHeals");
 	$("#scene-1").children(".ground").addClass("grassHeals");
 	$("#scene-0").children(".ground").addClass("grassHeals");
+	$("[id='just-tree5'], [id='just-tree4'], [id='just-tree3'], [id='just-tree2'], [id='just-tree1']").addClass("show");
+	$("#dead-tree").addClass("hide");
+
+
 
 	/**
 	 * create animations for:
