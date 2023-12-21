@@ -1,5 +1,4 @@
 const boing = new Audio('./sounds/footsteps.wav');
-
 boing.playbackRate = 1;
 boing.volume = 0.25;
 
@@ -214,15 +213,15 @@ function getRandomItem(array) {
 // Fetch the JSON file asynchronously
 function fillSecrets() {
 	fetch('secrets.json')
-    .then(response => response.json())
-    .then(data => {
-        const secretsArray = data.secrets;
-        const randomSecret = getRandomItem(secretsArray);
+		.then(response => response.json())
+		.then(data => {
+			const secretsArray = data.secrets;
+			const randomSecret = getRandomItem(secretsArray);
 
-        // Set the content of the paragraph to the randomly picked string
-        document.getElementById('whisper').textContent = randomSecret;
-    })
-    .catch(error => console.error('Error fetching data.json:', error));
+			// Set the content of the paragraph to the randomly picked string
+			document.getElementById('whisper').textContent = randomSecret;
+		})
+		.catch(error => console.error('Error fetching data.json:', error));
 }
 
 /*  End of Randomization funcs  */
