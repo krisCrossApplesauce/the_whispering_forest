@@ -24,6 +24,13 @@ Welcome to The Whispering Forest repository! This project is a text-based advent
 
 >Dynamic Content Display: Through carefully crafted algorithms, user-contributed content is dynamically displayed at specific locations within the forest, creating a seamless blend of user-generated narratives with an immersive visual experience.
 
+
+##Screenshot
+
+
+##Slide Deck
+[Google Slide Presentation][https://docs.google.com/presentation/d/1ns0DAHiNDjrSzyupMu1pyrWkCb1HFPLMvMbPiH8e_HA/edit#slide=id.g2644e8eddc0_0_29]
+
 ## Installation
 
 To play The Whispering Forest, follow these steps:
