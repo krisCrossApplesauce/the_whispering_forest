@@ -15,9 +15,13 @@ Welcome to The Whispering Forest repository! This project is a text-based advent
 "The Whispering Forest" aims to evoke a sense of wonder and connection among users, inviting them to contribute their unique perspectives to a shared digital landscape. By integrating backend data collection with frontend parallax design, we create a harmonious blend of technology and artistry, offering a memorable online experience that sparks imagination and storytelling."
 
 >Interactive Back End: We developed a robust back-end system to collect user input, which includes stories, thoughts, and reflections shared by visitors as they engage with the forest-themed website.
+
 >Data Storage: User inputs are securely stored in a database, ensuring privacy and data integrity while allowing for seamless retrieval and display.
+
 >Anonymous Contribution: Users have the freedom to share their experiences and narratives without revealing personal information, fostering a sense of community and creativity within the digital forest.
+
 >Parallax Scrolling: The website features parallax scrolling effects, enhancing the visual depth and immersion as users "walk" through the virtual forest, discovering hidden stories along the way.
+
 >Dynamic Content Display: Through carefully crafted algorithms, user-contributed content is dynamically displayed at specific locations within the forest, creating a seamless blend of user-generated narratives with an immersive visual experience.
 
 ## Installation
