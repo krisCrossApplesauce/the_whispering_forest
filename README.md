@@ -26,6 +26,7 @@ Welcome to The Whispering Forest repository! This project is a text-based advent
 
 
 ##Screenshot
+![entrance to the whispering forest](https://github.com/krisCrossApplesauce/the_whispering_forest/assets/90411730/34497bc9-b241-418f-8325-2606c2dda5b5)
 
 
 ##Slide Deck
